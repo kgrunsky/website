@@ -1,23 +1,26 @@
+var imgs = [];
+var n;
 
-
-function setup() {
-	createCanvas(windowWidth,windowHeight);
-	background(150,150,0);
-	fill(200);
-	stroke(50,100,200);
-	strokeWeight(50);
+function preload(){
+	for(i=0;i<3;i++){
+	imgs[i] = loadImage('assets/img'+i+'.jpg');
 	
-	
-}
-
-function draw(){
-	background(20,0,244);
-	for(i=0;i<10;i++){
-		line(mouseX,mouseY,20*i,110*i);
 	}
+	
+}
+function setup(){
+	print('preload completed');
+	createCanvas(800,600);
+	
+}
+function draw(){
+	for(q=0;q<imgs.length;q++){
+	image(imgs[q],0,q*100,200,100);
+	}
+	
 }
 
 
-function mousePressed(){
-	fill(random(0,255),random(0,255),random(0,255));	
-}
+//function name(arguments){
+//code
+//}
